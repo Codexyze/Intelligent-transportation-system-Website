@@ -216,7 +216,7 @@
             width: 300px;
             background: #f7f9fa;
             border-right: 1px solid #e1e1e1;
-            position: fixed;
+            position: absolute;
             top: 200px; /* Adjust this value based on your header height */
             bottom: 120px; /* Adjust this value based on your footer height */
             overflow-y: auto;
@@ -253,6 +253,75 @@
             background: #f8d7da;
             border: 1px solid #f5c6cb;
             margin: 10px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-left: 320px; /* Add space for the video list */
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+            aspect-ratio: 16 / 9; /* Maintain video aspect ratio */
+        }
+
+        #videoElement {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        .controls-wrapper {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        .language-selector {
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .control-button {
+            padding: 8px 15px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            background: rgb(43, 69, 152);
+            color: white;
+            cursor: pointer;
+        }
+
+        .control-button:hover {
+            background: rgb(63, 89, 172);
+        }
+
+        .time-display {
+            display: inline-block;
+            margin: 0 10px;
+            font-family: monospace;
+        }
+
+        #progressBar {
+            width: 100%;
+            height: 5px;
+            background: #ddd;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #progress {
+            width: 0%;
+            height: 100%;
+            background: rgb(43, 69, 152);
+            transition: width 0.1s linear;
         }
     </style>
 </head>
@@ -345,7 +414,7 @@
         <div class="video-player" id="videoPlayer">
             <div class="video-container">
                 <div class="video-wrapper">
-                    <video id="videoElement">
+                    <video id="videoElement" controls preload="metadata">
                         Your browser does not support the video element.
                     </video>
                     <audio id="audioElement">
@@ -378,78 +447,55 @@
     </div>
 
     <script>
-        function selectVideo(videoId) {
-            console.log('Selected video:', videoId);
-            // This will be implemented in Phase 2
-            document.getElementById('placeholder').textContent = 'Loading video ' + videoId + '...';
-        }
+        // Remove this first function
+        // function selectVideo(videoId) {
+        //     console.log('Selected video:', videoId);
+        //     document.getElementById('placeholder').textContent = 'Loading video ' + videoId + '...';
+        // }
+        
         const videoElement = document.getElementById('videoElement');
         const audioElement = document.getElementById('audioElement');
         const playPauseBtn = document.getElementById('playPauseBtn');
-        const languageSelect = document.getElementById('languageSelect');
         const progressBar = document.getElementById('progressBar');
         const progress = document.getElementById('progress');
         const currentTimeDisplay = document.getElementById('currentTime');
         const durationDisplay = document.getElementById('duration');
-
-        let currentVideoId = null;
-
+        
         async function selectVideo(videoId) {
-            currentVideoId = videoId;
             try {
-                // Fetch video and audio information
+                console.log('Loading video:', videoId);
                 const response = await fetch(`get_video_data.php?video_id=${videoId}`);
                 const data = await response.json();
                 
                 if (data.error) {
                     throw new Error(data.error);
                 }
-
-                // Set video source
-                videoElement.src = data.video_path;
-                // Set initial audio source (default language)
-                loadAudioForLanguage(languageSelect.value);
+        
+                // Convert absolute Windows path to web path
+                const webPath = data.original_path  // Changed from video_path to original_path
+                    .replace('C:\\xampp\\htdocs\\Intelligent-transportation-system-Website', '')
+                    .replace(/\\/g, '/');
+                
+                console.log('Video web path:', webPath);
+                videoElement.src = webPath;
                 
                 // Reset controls
                 playPauseBtn.textContent = 'Play';
                 progress.style.width = '0%';
                 currentTimeDisplay.textContent = '00:00';
                 
-                // Load the media
+                // Load and play the video
                 await videoElement.load();
-                await audioElement.load();
-                
-                durationDisplay.textContent = formatTime(videoElement.duration);
+                try {
+                    await videoElement.play();
+                    playPauseBtn.textContent = 'Pause';
+                } catch (error) {
+                    console.error('Error playing video:', error);
+                    alert('Error playing video. Please check if the video file exists.');
+                }
             } catch (error) {
                 console.error('Error loading video:', error);
                 alert('Error loading video. Please try again.');
-            }
-        }
-
-        async function loadAudioForLanguage(langCode) {
-            if (!currentVideoId) return;
-            
-            try {
-                const response = await fetch(`get_audio.php?video_id=${currentVideoId}&lang_code=${langCode}`);
-                const data = await response.json();
-                
-                if (data.error) {
-                    throw new Error(data.error);
-                }
-
-                const wasPlaying = !videoElement.paused;
-                const currentTime = videoElement.currentTime;
-                
-                audioElement.src = data.audio_path;
-                await audioElement.load();
-                
-                audioElement.currentTime = currentTime;
-                if (wasPlaying) {
-                    await audioElement.play();
-                }
-            } catch (error) {
-                console.error('Error loading audio:', error);
-                alert('Error loading audio. Please try again.');
             }
         }
 
@@ -457,38 +503,31 @@
         playPauseBtn.addEventListener('click', () => {
             if (videoElement.paused) {
                 videoElement.play();
-                audioElement.play();
                 playPauseBtn.textContent = 'Pause';
             } else {
                 videoElement.pause();
-                audioElement.pause();
                 playPauseBtn.textContent = 'Play';
             }
-        });
-
-        languageSelect.addEventListener('change', (e) => {
-            loadAudioForLanguage(e.target.value);
         });
 
         progressBar.addEventListener('click', (e) => {
             const pos = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
             const time = pos * videoElement.duration;
             videoElement.currentTime = time;
-            audioElement.currentTime = time;
         });
 
         videoElement.addEventListener('timeupdate', () => {
             const pos = (videoElement.currentTime / videoElement.duration) * 100;
             progress.style.width = `${pos}%`;
             currentTimeDisplay.textContent = formatTime(videoElement.currentTime);
-            
-            // Keep audio in sync
-            if (Math.abs(videoElement.currentTime - audioElement.currentTime) > 0.1) {
-                audioElement.currentTime = videoElement.currentTime;
-            }
+        });
+
+        videoElement.addEventListener('loadedmetadata', () => {
+            durationDisplay.textContent = formatTime(videoElement.duration);
         });
 
         function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
