@@ -6,20 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTimeDisplay = document.getElementById('currentTime');
     const durationDisplay = document.getElementById('duration');
     const transcriptionText = document.getElementById('transcriptionText');
-    
+    const languageSelect = document.getElementById('languageSelect');
+
     let currentVideoId = null;
 
+    // --- Select and load a video ---
     window.selectVideo = async function(videoId) {
         try {
             currentVideoId = videoId;
             console.log('Loading video:', videoId);
-            
+
             const response = await fetch('api/get_video_data.php?video_id=' + videoId);
-            
+
             // Debug: Log raw response
             const responseText = await response.text();
             console.log('Raw API Response:', responseText);
-            
+
             // Try to parse the response
             let data;
             try {
@@ -28,28 +30,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('JSON Parse Error:', parseError);
                 throw new Error('Invalid response from server');
             }
-            
+
             if (data.error) {
                 throw new Error(data.error);
             }
 
             console.log('Video data:', data);
-            
+
             // Debug: Log the full video path
             console.log('Setting video source to:', data.original_path);
-            
+
+            // Set video source, encode spaces
             videoElement.src = data.original_path.replace(/ /g, "%20");
-            
+
             // Reset controls
             playPauseBtn.textContent = 'Play';
             progress.style.width = '0%';
             currentTimeDisplay.textContent = '00:00';
-            
-            // Load transcription
-            if (document.getElementById('languageSelect')) {
-                loadTranscription(videoId, document.getElementById('languageSelect').value);
+            durationDisplay.textContent = '00:00';
+
+            // Always load English transcription by default
+            if (languageSelect) {
+                languageSelect.value = "en";
+                loadTranscription(videoId, "en");
+            } else {
+                loadTranscription(videoId, "en");
             }
-            
+
             await videoElement.load();
             try {
                 await videoElement.play();
@@ -67,16 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // --- Load transcription ---
     async function loadTranscription(videoId, langCode) {
         try {
             const response = await fetch(`api/get_transcription.php?video_id=${videoId}&lang_code=${langCode}`);
             const data = await response.json();
-            
+
             if (data.error) {
                 transcriptionText.innerHTML = 'Transcription not available.';
                 return;
             }
-            
+
             transcriptionText.innerHTML = data.transcript;
         } catch (error) {
             console.error('Error loading transcription:', error);
@@ -84,13 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // --- Change language (for current video) ---
     window.changeLanguage = function(langCode) {
         if (currentVideoId) {
             loadTranscription(currentVideoId, langCode);
         }
     };
 
-    // Video player controls
+    // --- Video player controls ---
     playPauseBtn.addEventListener('click', () => {
         if (videoElement.paused) {
             videoElement.play();
@@ -125,6 +134,10 @@ document.addEventListener('DOMContentLoaded', function() {
             readyState: videoElement.readyState
         });
     });
+
+    // --- Auto-select and load the first video on page load ---
+    const firstVideoLink = document.querySelector('#videosList a');
+    if (firstVideoLink) firstVideoLink.click();
 });
 
 function formatTime(seconds) {

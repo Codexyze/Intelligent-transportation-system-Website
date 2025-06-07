@@ -108,7 +108,10 @@ if ($conn) {
             </div>
 
             <div class="transcription-container">
-                <div id="transcriptionText" class="transcription-text"></div>
+                <div class="language-selector">
+                    <strong>Transcript:</strong>
+                </div>
+                <div id="transcriptionText" class="transcription-text">Select a video to view transcription.</div>
             </div>
         </div>
     </div>
