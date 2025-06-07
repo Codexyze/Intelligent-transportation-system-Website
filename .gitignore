@@ -1,1 +1,34 @@
-Data/
+# Ignore video, audio, and transcription files (but keep folder structure)
+
+# Videos
+/assets/videos/
+/Website/assets/videos/
+
+# Audio translations
+/assets/audio/translations/
+/Website/assets/audio/translations/
+
+# Transcriptions
+/assets/transcriptions/
+/Website/assets/transcriptions/
+
+# Allow the folders to be tracked (keep empty directories)
+!assets/videos/.gitkeep
+!assets/audio/translations/.gitkeep
+!assets/transcriptions/.gitkeep
+!Website/assets/videos/.gitkeep
+!Website/assets/audio/translations/.gitkeep
+!Website/assets/transcriptions/.gitkeep
+
+# Ignore common OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore PHP storm and other metadata
+*.iml
