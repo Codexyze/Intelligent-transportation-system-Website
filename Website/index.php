@@ -11,40 +11,38 @@ if ($conn) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITS Learning Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
+
 <body>
-    <div class="real">
+    <div class="real ">
         <div class="container">
-            <div class="row">
-                <div class="site_topbar">
-                    <i class="phone"></i> <b></b>
-                    <i class="envelope_icon"></i> 
-                </div>
-            </div>
+            <i class="phone"></i>
+            <b></b>
+            <i class="envelope_icon"></i>
         </div>
     </div>
 
     <div class="container1">
         <div class="row1">
             <div class="site_header_1">
-                <h2 class="web_title">
-                    <a class="back" href="https://aitmbgm.ac.in">
-                        <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/Suresh-Angadi.jpg" alt="AITMBGM" title="AITMBGM">
-                    </a>
-                </h2>
+                <a class="back" href="https://aitmbgm.ac.in">
+                    <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/Suresh-Angadi.jpg"
+                        alt="AITMBGM" title="AITMBGM">
             </div>
 
             <div class="site_header_2">
-                <h2 class="web_title">
-                    <a class="back" href="https://aitmbgm.ac.in">
-                        <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitmbgm-logo.png" alt="AITMBGM" title="AITMBGM">
-                    </a>
-                </h2>
+                <a class="back" href="https://aitmbgm.ac.in">
+                    <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitmbgm-logo.png"
+                        alt="AITMBGM" title="AITMBGM">
+                </a>
             </div>
 
             <div class="site_header_3">
@@ -54,7 +52,8 @@ if ($conn) {
             </div>
 
             <div class="site_header_4">
-                <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitm-logo.png" alt="AITM" title="AITM">
+                <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitm-logo.png"
+                    alt="AITM" title="AITM">
             </div>
         </div>
     </div>
@@ -64,8 +63,10 @@ if ($conn) {
             <li><a href="#">Home</a></li>
             <!-- Add more nav items as needed -->
         </ul>
-        <div class="language-dropdown">
-            <label for="languageSelect">Language:</label>
+        <div class="language-dropdown"
+            style="margin-left:auto; margin-right:10px; display:flex; align-items:center; font-weight: bold; font-size: 16px; w-4">
+            <label for="languageSelect"
+                style="color:white; margin-right:8px; font-weight: bold; font-size: 16px; ">Language:</label>
             <select id="languageSelect" onchange="changeLanguage(this.value)">
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
@@ -74,16 +75,17 @@ if ($conn) {
             </select>
         </div>
     </nav>
-    <div class="container">
+
+    <div class="container_page_layout">
         <div class="video-list">
             <h2>Available Videos</h2>
             <ul id="videosList">
                 <?php foreach ($videos as $video): ?>
-                    <li>
-                        <a href="#" onclick="selectVideo(<?php echo $video['video_id']; ?>); return false;">
-                            <?php echo htmlspecialchars($video['title']); ?>
-                        </a>
-                    </li>
+                <li>
+                    <a href="#" onclick="selectVideo(<?php echo $video['video_id']; ?>); return false;">
+                        <?php echo htmlspecialchars($video['title']); ?>
+                    </a>
+                </li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -100,7 +102,7 @@ if ($conn) {
                             <div id="progress"></div>
                         </div>
                         <div class="time-display">
-                            <span id="currentTime">00:00</span> / 
+                            <span id="currentTime">00:00</span> /
                             <span id="duration">00:00</span>
                         </div>
                     </div>
@@ -118,6 +120,12 @@ if ($conn) {
             </div>
     </div>
 
+    <footer>
+        <h2>Angadi Institute Of Technology And Management</h2>
+    </footer>
+
     <script src="assets/js/player.js"></script>
+
 </body>
+
 </html>
