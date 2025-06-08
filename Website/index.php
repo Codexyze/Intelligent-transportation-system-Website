@@ -64,8 +64,8 @@ if ($conn) {
             <li><a href="#">Home</a></li>
             <!-- Add more nav items as needed -->
         </ul>
-        <div class="language-dropdown" style="margin-left:auto;">
-            <label for="languageSelect" style="color:white;margin-right:8px;">Language:</label>
+        <div class="language-dropdown">
+            <label for="languageSelect">Language:</label>
             <select id="languageSelect" onchange="changeLanguage(this.value)">
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
@@ -106,14 +106,16 @@ if ($conn) {
                     </div>
                 </div>
             </div>
-
             <div class="transcription-container">
-                <div class="language-selector">
-                    <strong>Transcript:</strong>
+                <div class="content-toggle">
+                    <button id="showTranscription" class="toggle-btn active">Transcription</button>
+                    <button id="showDescription" class="toggle-btn">Description</button>
                 </div>
-                <div id="transcriptionText" class="transcription-text">Select a video to view transcription.</div>
+                <div id="contentArea">
+                    <div id="transcriptionText" class="transcription-text content-section active"></div>
+                    <div id="descriptionText" class="description-text content-section"></div>
+                </div>
             </div>
-        </div>
     </div>
 
     <script src="assets/js/player.js"></script>

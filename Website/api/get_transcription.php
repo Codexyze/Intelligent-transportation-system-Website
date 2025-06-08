@@ -2,52 +2,71 @@
 require_once '../includes/db.php';
 
 header('Content-Type: application/json');
+
+// Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$video_id = $_GET['video_id'] ?? null;
-$lang_code = $_GET['lang_code'] ?? 'en';
+$video_id = isset($_GET['video_id']) ? (int)$_GET['video_id'] : 0;
+$lang_code = isset($_GET['lang_code']) ? $_GET['lang_code'] : 'en';
+
+// Log incoming request
+error_log("Transcription requested for video_id: $video_id, lang_code: $lang_code");
 
 if (!$video_id) {
-    echo json_encode(['error' => 'Video ID is required']);
+    echo json_encode(['error' => 'Invalid video ID']);
     exit;
 }
 
 try {
     $conn = getDBConnection();
-    if (!$conn) {
-        throw new Exception('Database connection failed');
-    }
-
-    $stmt = $conn->prepare("
-        SELECT t.transcript_path, v.title 
-        FROM transcriptions t
-        JOIN videos v ON t.video_id = v.video_id
-        WHERE t.video_id = ? AND t.lang_code = ?
-    ");
-    $stmt->execute([$video_id, $lang_code]);
     
-    if ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $transcriptPath = $_SERVER['DOCUMENT_ROOT'] . $data['transcript_path'];
-        
-        if (file_exists($transcriptPath)) {
-            $transcript = file_get_contents($transcriptPath);
-            echo json_encode([
-                'status' => 'success',
-                'title' => $data['title'],
-                'transcript' => $transcript,
-                'language' => $lang_code
-            ]);
-        } else {
-            echo json_encode([
-                'error' => 'Transcript file not found',
-                'path' => $data['transcript_path']
-            ]);
-        }
-    } else {
-        echo json_encode(['error' => 'Transcript not found']);
+    // Get transcription path from database
+    $stmt = $conn->prepare("SELECT transcript_path FROM transcriptions 
+                           WHERE video_id = ? AND lang_code = ?");
+    $stmt->execute([$video_id, $lang_code]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if (!$result) {
+        error_log("No transcription found in database for video_id: $video_id, lang_code: $lang_code");
+        echo json_encode(['error' => 'Transcription not available in database']);
+        exit;
     }
-} catch(Exception $e) {
-    echo json_encode(['error' => 'Server error: ' . $e->getMessage()]);
+    
+    $transcript_path = $_SERVER['DOCUMENT_ROOT'] . $result['transcript_path'];
+    error_log("Looking for transcript at: " . $transcript_path);
+    
+    if (!file_exists($transcript_path)) {
+        error_log("Transcript file not found at: " . $transcript_path);
+        echo json_encode(['error' => 'Transcription file not found at: ' . $transcript_path]);
+        exit;
+    }
+    
+    $transcript = file_get_contents($transcript_path);
+    if ($transcript === false) {
+        error_log("Failed to read transcript file: " . $transcript_path);
+        echo json_encode(['error' => 'Failed to read transcript file']);
+        exit;
+    }
+    
+    echo json_encode([
+        'success' => true,
+        'transcript' => $transcript,
+        'debug' => [
+            'video_id' => $video_id,
+            'lang_code' => $lang_code,
+            'path' => $transcript_path
+        ]
+    ]);
+    
+} catch (Exception $e) {
+    error_log('Transcription error: ' . $e->getMessage());
+    echo json_encode([
+        'error' => 'Error loading transcription',
+        'debug' => [
+            'message' => $e->getMessage(),
+            'video_id' => $video_id,
+            'lang_code' => $lang_code
+        ]
+    ]);
 }
-?>
