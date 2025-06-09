@@ -135,6 +135,38 @@ if ($conn) {
                 </div>
             </div>
 
+            <!-- Feedback Button and Popup -->
+            <div class="feedback-section">
+                <button id="feedbackBtn" class="feedback-btn">Provide Feedback</button>
+            </div>
+
+            <!-- Feedback Popup -->
+            <div id="feedbackModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Feedback Form</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="feedbackForm" action="submit_feedback.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name(press enter): </label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email(press enter):</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback">Feedback(press enter):</label>
+                                <textarea id="feedback" name="feedback" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Feedback</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <!-- Transcription and Description Area -->
             <div class="transcription-container">
                 <div class="content-toggle">
@@ -171,13 +203,13 @@ if ($conn) {
         <p>Last Updated: <span id="lastUpdatedDisplay"><?php echo date('Y-m-d H:i:s'); ?></span></p>
         <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
     </div>
-
+    <div class="show-feedback-section">
+                <a href="view_feedbacks.php" class="show-feedback-btn">Show All Feedbacks</a>
+            </div>                
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <h2>Angadi Institute Of Technology And Management</h2>
-            <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
-            <p>Developer: vky6366</p>
         </div>
     </footer>
 
@@ -223,6 +255,82 @@ if ($conn) {
         function dragEnd() {
             isDragging = false;
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get modal elements
+            const modal = document.getElementById('feedbackModal');
+            const btn = document.getElementById('feedbackBtn');
+            const span = document.getElementsByClassName('close')[0];
+            const form = document.getElementById('feedbackForm');
+            const currentDateTimeElement = document.getElementById('currentDateTime');
+            const currentUserElement = document.getElementById('currentUser');
+
+            // Update date/time and user
+            function updateDateTime() {
+                const now = new Date();
+                const formatted = now.getUTCFullYear() + '-' + 
+                                String(now.getUTCMonth() + 1).padStart(2, '0') + '-' + 
+                                String(now.getUTCDate()).padStart(2, '0') + ' ' + 
+                                String(now.getUTCHours()).padStart(2, '0') + ':' + 
+                                String(now.getUTCMinutes()).padStart(2, '0') + ':' + 
+                                String(now.getUTCSeconds()).padStart(2, '0');
+                currentDateTimeElement.textContent = formatted;
+            }
+
+            // Open modal
+            btn.onclick = function() {
+                modal.style.display = 'block';
+                setTimeout(() => modal.classList.add('show'), 10);
+                updateDateTime();
+            }
+
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('show');
+                setTimeout(() => modal.style.display = 'none', 300);
+            }
+
+            span.onclick = closeModal;
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+
+            // Handle form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch('submit_feedback.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        form.reset();
+                        closeModal();
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('Error submitting feedback. Please try again.');
+                });
+            });
+
+            // Escape key to close modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+        });
     </script>
 </body>
 
