@@ -15,14 +15,15 @@ if ($conn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="vky6366">
+    <meta name="last-modified" content="2025-06-08 03:51:36 UTC">
     <title>ITS Learning Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
-
 </head>
 
 <body>
-    <div class="real ">
+    <!-- Top Contact Bar -->
+    <div class="real">
         <div class="container">
             <i class="phone"></i>
             <b></b>
@@ -30,14 +31,18 @@ if ($conn) {
         </div>
     </div>
 
+    <!-- Header Section -->
     <div class="container1">
         <div class="row1">
+            <!-- Suresh Angadi Photo -->
             <div class="site_header_1">
                 <a class="back" href="https://aitmbgm.ac.in">
                     <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/Suresh-Angadi.jpg"
                         alt="AITMBGM" title="AITMBGM">
+                </a>
             </div>
 
+            <!-- AITMBGM Logo -->
             <div class="site_header_2">
                 <a class="back" href="https://aitmbgm.ac.in">
                     <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitmbgm-logo.png"
@@ -45,12 +50,14 @@ if ($conn) {
                 </a>
             </div>
 
+            <!-- Institution Details -->
             <div class="site_header_3">
                 <h6>SURESH ANGADI EDUCATION FOUNDATIONS</h6>
                 <h2>ANGADI INSTITUTE OF TECHNOLOGY AND MANAGEMENT</h2>
                 <span>Approved by AICTE, New Delhi, Affiliated to VTU, Belagavi. <br>Accredited by *NBA and NAAC</span>
             </div>
 
+            <!-- AITM Logo -->
             <div class="site_header_4">
                 <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitm-logo.png"
                     alt="AITM" title="AITM">
@@ -58,25 +65,38 @@ if ($conn) {
         </div>
     </div>
 
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <!-- Add more nav items as needed -->
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
-        <div class="language-dropdown"
-            style="margin-left:auto; margin-right:10px; display:flex; align-items:center; font-weight: bold; font-size: 16px; w-4">
-            <label for="languageSelect"
-                style="color:white; margin-right:8px; font-weight: bold; font-size: 16px; ">Language:</label>
-            <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <!-- Language Selector -->
+        <div class="language-dropdown">
+            <label for="languageSelect">Language:</label>
+            <select id="languageSelect">
                 <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+                <option value="ru">Russian</option>
+                <option value="it">Italian</option>
                 <option value="hi">Hindi</option>
                 <option value="kn">Kannada</option>
-                <!-- Add more languages as needed -->
+                <option value="mr">Marathi</option>
+                <option value="bn">Bengali</option>
+                <option value="gu">Gujarati</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="ur">Urdu</option>
             </select>
         </div>
     </nav>
 
+    <!-- Main Content Container -->
     <div class="container_page_layout">
+        <!-- Video List Sidebar -->
         <div class="video-list">
             <h2>Available Videos</h2>
             <ul id="videosList">
@@ -90,7 +110,9 @@ if ($conn) {
             </ul>
         </div>
 
+        <!-- Main Content Area -->
         <div class="main-content">
+            <!-- Video Player -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <video id="videoElement" controlsList="nodownload">
@@ -105,9 +127,15 @@ if ($conn) {
                             <span id="currentTime">00:00</span> /
                             <span id="duration">00:00</span>
                         </div>
+                        <div class="volume-control">
+                            <label for="volumeControl">Volume:</label>
+                            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Transcription and Description Area -->
             <div class="transcription-container">
                 <div class="content-toggle">
                     <button id="showTranscription" class="toggle-btn active">Transcription</button>
@@ -118,14 +146,84 @@ if ($conn) {
                     <div id="descriptionText" class="description-text content-section"></div>
                 </div>
             </div>
+        </div>
     </div>
 
+    <!-- Debug Information Panel -->
+    <div id="debugInfo" style="
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: monospace;
+        z-index: 9999;
+        max-width: 300px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    ">
+        <h3 style="margin: 0 0 10px 0; color: #00ff00;">Debug Information</h3>
+        <p>Current Video ID: <span id="currentVideoIdDisplay">none</span></p>
+        <p>Current Language: <span id="currentLanguageDisplay">none</span></p>
+        <p>Audio Loaded: <span id="audioLoadedDisplay">false</span></p>
+        <p>Last Event: <span id="lastEventDisplay">none</span></p>
+        <p>Last Updated: <span id="lastUpdatedDisplay"><?php echo date('Y-m-d H:i:s'); ?></span></p>
+        <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <h2>Angadi Institute Of Technology And Management</h2>
+        <div class="footer-content">
+            <h2>Angadi Institute Of Technology And Management</h2>
+            <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
+            <p>Developer: vky6366</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="assets/js/player.js"></script>
+    <script>
+        // Initialize debug display updates
+        function updateDebugTimestamp() {
+            document.getElementById('lastUpdatedDisplay').textContent = new Date().toISOString();
+        }
 
+        // Update debug timestamp every minute
+        setInterval(updateDebugTimestamp, 60000);
+
+        // Make debug panel draggable
+        const debugPanel = document.getElementById('debugInfo');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+
+        debugPanel.addEventListener('mousedown', dragStart);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+
+        function dragStart(e) {
+            initialX = e.clientX - debugPanel.offsetLeft;
+            initialY = e.clientY - debugPanel.offsetTop;
+            isDragging = true;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                debugPanel.style.left = currentX + 'px';
+                debugPanel.style.top = currentY + 'px';
+            }
+        }
+
+        function dragEnd() {
+            isDragging = false;
+        }
+    </script>
 </body>
 
 </html>
