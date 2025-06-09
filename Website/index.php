@@ -176,8 +176,8 @@ if ($conn) {
     <footer>
         <div class="footer-content">
             <h2>Angadi Institute Of Technology And Management</h2>
-            <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
-            <p>Developer: vky6366</p>
+            <!-- <p>Last Updated: </p>
+            <p>Developer: </p -->
         </div>
     </footer>
 
