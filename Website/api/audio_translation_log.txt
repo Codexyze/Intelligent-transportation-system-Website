@@ -270,3 +270,355 @@ GET params: Array
     [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/hi/sonam_mam_hindi_full_audio.mp3
 )
 
+2025-06-09 16:14:15 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:14:15 - Query result: 
+2025-06-09 16:14:41 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => fr
+)
+
+2025-06-09 16:14:41 - Query result: 
+2025-06-09 16:14:43 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:14:43 - Query result: 
+2025-06-09 16:14:44 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:14:44 - Query result: 
+2025-06-09 16:14:48 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:14:48 - Query result: 
+2025-06-09 16:29:08 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:29:08 - Query result: 
+2025-06-09 16:29:09 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:29:09 - Query result: 
+2025-06-09 16:29:36 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:29:36 - Query result: 
+2025-06-09 16:29:38 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:29:38 - Query result: 
+2025-06-09 16:29:41 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:29:41 - Query result: 
+2025-06-09 16:29:43 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-09 16:29:43 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-09 16:49:31 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:49:31 - Query result: 
+2025-06-09 16:49:32 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:49:32 - Query result: 
+2025-06-09 16:51:18 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:51:18 - Query result: 
+2025-06-09 16:52:23 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:52:23 - Query result: 
+2025-06-09 16:56:25 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:56:25 - Query result: 
+2025-06-09 16:57:04 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:57:04 - Query result: 
+2025-06-09 16:58:50 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:58:50 - Query result: 
+2025-06-09 16:58:52 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:58:52 - Query result: 
+2025-06-09 16:58:55 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:58:55 - Query result: 
+2025-06-09 16:58:55 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-09 16:58:55 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-09 16:58:57 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 16:58:57 - Query result: 
+2025-06-09 17:03:51 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:03:51 - Query result: 
+2025-06-09 17:03:55 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:03:55 - Query result: 
+2025-06-09 17:04:13 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:04:13 - Query result: 
+2025-06-09 17:04:37 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:04:37 - Query result: 
+2025-06-09 17:05:42 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:05:42 - Query result: 
+2025-06-09 17:06:09 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:06:09 - Query result: 
+2025-06-09 17:06:46 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:06:46 - Query result: 
+2025-06-09 17:07:15 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:07:15 - Query result: 
+2025-06-09 17:07:26 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:07:26 - Query result: 
+2025-06-09 17:07:38 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:07:38 - Query result: 
+2025-06-09 17:07:47 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:07:47 - Query result: 
+2025-06-09 17:08:16 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:08:16 - Query result: 
+2025-06-09 17:08:42 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:08:42 - Query result: 
+2025-06-09 17:09:01 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:09:01 - Query result: 
+2025-06-09 17:10:03 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:10:03 - Query result: 
+2025-06-09 17:10:19 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:10:19 - Query result: 
+2025-06-09 17:10:32 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:10:32 - Query result: 
+2025-06-09 17:10:57 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:10:57 - Query result: 
+2025-06-09 17:13:10 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:13:10 - Query result: 
+2025-06-09 17:17:34 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:17:34 - Query result: 
+2025-06-09 17:19:45 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-09 17:19:45 - Query result: 
