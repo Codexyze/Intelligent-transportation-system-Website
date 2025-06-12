@@ -135,47 +135,33 @@ if ($conn) {
                 </div>
             </div>
 
-            <!-- Feedback Button and Popup -->
-            <div class="feedback-section">
-                <button id="feedbackBtn" class="feedback-btn">Provide Feedback</button>
-            </div>
-
-            <!-- Feedback Popup -->
-            <div id="feedbackModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Feedback Form</h2>
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <form id="feedbackForm" action="submit_feedback.php" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name(press enter): </label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email(press enter):</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="feedback">Feedback(press enter):</label>
-                                <textarea id="feedback" name="feedback" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Submit Feedback</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             <!-- Transcription and Description Area -->
             <div class="transcription-container">
                 <div class="content-toggle">
                     <button id="showTranscription" class="toggle-btn active">Transcription</button>
                     <button id="showDescription" class="toggle-btn">Description</button>
+                    <button id="showFeedback" class="toggle-btn feedback-btn">Provide Feedback</button>
                 </div>
                 <div id="contentArea">
                     <div id="transcriptionText" class="transcription-text content-section active"></div>
                     <div id="descriptionText" class="description-text content-section"></div>
+                    <div id="feedbackForm" class="feedback-section content-section">
+                        <form action="submit_feedback.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback">Feedback:</label>
+                                <textarea id="feedback" name="feedback" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Feedback</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -204,10 +190,15 @@ if ($conn) {
         <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
     </div>
     <div class="show-feedback-section">
-                <a href="view_feedbacks.php" class="show-feedback-btn">Show All Feedbacks</a>
-            </div>                
+            <a href="view_feedbacks.php" class="show-feedback-btn">
+                <i class="fas fa-comments"></i>
+                View All Feedbacks
+            </a>
+        </div>
     <!-- Footer -->
     <footer>
+        <!-- Show All Feedbacks Button -->
+        
         <div class="footer-content">
             <h2>Angadi Institute Of Technology And Management</h2>
             <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
@@ -218,47 +209,11 @@ if ($conn) {
     <!-- Scripts -->
     <script src="assets/js/player.js"></script>
     <script>
-        // Initialize debug display updates
-        function updateDebugTimestamp() {
-            document.getElementById('lastUpdatedDisplay').textContent = new Date().toISOString();
-        }
-
-        // Update debug timestamp every minute
-        setInterval(updateDebugTimestamp, 60000);
-
-        // Make debug panel draggable
-        const debugPanel = document.getElementById('debugInfo');
-        let isDragging = false;
-        let currentX;
-        let currentY;
-        let initialX;
-        let initialY;
-
-        debugPanel.addEventListener('mousedown', dragStart);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', dragEnd);
-
-        function dragStart(e) {
-            initialX = e.clientX - debugPanel.offsetLeft;
-            initialY = e.clientY - debugPanel.offsetTop;
-            isDragging = true;
-        }
-
-        function drag(e) {
-            if (isDragging) {
-                e.preventDefault();
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-                debugPanel.style.left = currentX + 'px';
-                debugPanel.style.top = currentY + 'px';
-            }
-        }
-
-        function dragEnd() {
-            isDragging = false;
-        }
-
+        console.log("Test script loaded");
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("Test DOMContentLoaded fired");
+            const testBtn = document.getElementById('showTranscription');
+            console.log("Test button found:", testBtn);
             // Get modal elements
             const modal = document.getElementById('feedbackModal');
             const btn = document.getElementById('feedbackBtn');
@@ -333,6 +288,47 @@ if ($conn) {
                 }
             });
         });
+    </script>
+    <script>
+        // Initialize debug display updates
+        function updateDebugTimestamp() {
+            document.getElementById('lastUpdatedDisplay').textContent = new Date().toISOString();
+        }
+
+        // Update debug timestamp every minute
+        setInterval(updateDebugTimestamp, 60000);
+
+        // Make debug panel draggable
+        const debugPanel = document.getElementById('debugInfo');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+
+        debugPanel.addEventListener('mousedown', dragStart);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+
+        function dragStart(e) {
+            initialX = e.clientX - debugPanel.offsetLeft;
+            initialY = e.clientY - debugPanel.offsetTop;
+            isDragging = true;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                debugPanel.style.left = currentX + 'px';
+                debugPanel.style.top = currentY + 'px';
+            }
+        }
+
+        function dragEnd() {
+            isDragging = false;
+        }
     </script>
 </body>
 

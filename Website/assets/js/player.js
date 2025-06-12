@@ -1,11 +1,21 @@
 // Global variables
+console.log("Script starting to load...");
+
 let currentVideoId = null;
-let transcriptionText = null;
+let transcriptionText = document.getElementById('transcriptionText');
+let descriptionText = document.getElementById('descriptionText');
 let currentDescription = '';
 let currentAudioElement = null;
 let isAudioLoaded = false;
 
+console.log("Initial element check:", {
+    transcriptionText: transcriptionText,
+    descriptionText: descriptionText
+});
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM Content Loaded event fired");
+    
     // Initialize DOM elements
     const videoElement = document.getElementById('videoElement');
     const audioElement = document.createElement('audio');
@@ -16,6 +26,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const durationDisplay = document.getElementById('duration');
     const volumeControl = document.getElementById('volumeControl');
     const languageSelect = document.getElementById('languageSelect');
+    const showTranscriptionBtn = document.getElementById('showTranscription');
+    const showDescriptionBtn = document.getElementById('showDescription');
+    const showFeedbackBtn = document.getElementById('showFeedback');
+    const feedbackForm = document.getElementById('feedbackForm');
+    
+    console.log("DOM elements check:", {
+        videoElement,
+        showTranscriptionBtn,
+        showDescriptionBtn,
+        showFeedbackBtn,
+        feedbackForm
+    });
+
+    // Re-initialize transcription elements
+    transcriptionText = document.getElementById('transcriptionText');
+    descriptionText = document.getElementById('descriptionText');
+    
+    console.log("Re-initialized transcription elements:", {
+        transcriptionText,
+        descriptionText
+    });
 
     // Debug info element
     const debugInfo = document.createElement('div');
@@ -33,10 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     audioElement.id = 'audioElement';
     currentAudioElement = audioElement;
     document.body.appendChild(audioElement);
-    
-    // Get content elements
-    transcriptionText = document.getElementById('transcriptionText');
-    const descriptionText = document.getElementById('descriptionText');
 
     // Add language change listener
     if (languageSelect) {
@@ -44,6 +71,128 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Language select changed:', e.target.value);
             await changeLanguage(e.target.value);
         });
+    }
+
+    // Add toggle functionality with direct click handlers
+    if (showTranscriptionBtn && showDescriptionBtn && showFeedbackBtn) {
+        console.log("Initializing toggle buttons");
+        
+        // Remove any existing event listeners
+        showTranscriptionBtn.replaceWith(showTranscriptionBtn.cloneNode(true));
+        showDescriptionBtn.replaceWith(showDescriptionBtn.cloneNode(true));
+        showFeedbackBtn.replaceWith(showFeedbackBtn.cloneNode(true));
+        
+        // Get fresh references after cloning
+        const freshTranscriptionBtn = document.getElementById('showTranscription');
+        const freshDescriptionBtn = document.getElementById('showDescription');
+        const freshFeedbackBtn = document.getElementById('showFeedback');
+        
+        console.log("Fresh button references:", {
+            transcription: freshTranscriptionBtn,
+            description: freshDescriptionBtn,
+            feedback: freshFeedbackBtn
+        });
+
+        // Function to update content visibility
+        function updateContentVisibility(activeSection) {
+            if (transcriptionText && descriptionText && feedbackForm) {
+                // Hide all sections
+                transcriptionText.classList.remove('active');
+                descriptionText.classList.remove('active');
+                feedbackForm.classList.remove('active');
+                
+                // Remove active class from all buttons
+                freshTranscriptionBtn.classList.remove('active');
+                freshDescriptionBtn.classList.remove('active');
+                freshFeedbackBtn.classList.remove('active');
+                
+                // Show selected section and activate button
+                switch(activeSection) {
+                    case 'transcription':
+                        transcriptionText.classList.add('active');
+                        freshTranscriptionBtn.classList.add('active');
+                        console.log("Showing transcription");
+                        break;
+                    case 'description':
+                        descriptionText.classList.add('active');
+                        freshDescriptionBtn.classList.add('active');
+                        console.log("Showing description:", descriptionText.innerHTML);
+                        break;
+                    case 'feedback':
+                        feedbackForm.classList.add('active');
+                        freshFeedbackBtn.classList.add('active');
+                        console.log("Showing feedback form");
+                        break;
+                }
+            } else {
+                console.error("Content elements not found");
+            }
+        }
+
+        // Add click handlers
+        freshTranscriptionBtn.onclick = function(e) {
+            console.log("Transcription button clicked");
+            e.preventDefault();
+            updateContentVisibility('transcription');
+        };
+
+        freshDescriptionBtn.onclick = function(e) {
+            console.log("Description button clicked");
+            e.preventDefault();
+            updateContentVisibility('description');
+        };
+
+        freshFeedbackBtn.onclick = function(e) {
+            console.log("Feedback button clicked");
+            e.preventDefault();
+            updateContentVisibility('feedback');
+        };
+
+        // Add visual feedback for button states
+        [freshTranscriptionBtn, freshDescriptionBtn, freshFeedbackBtn].forEach(btn => {
+            btn.style.cursor = 'pointer';
+            btn.addEventListener('mouseover', () => {
+                console.log(`${btn.id} hover`);
+                btn.style.opacity = '0.8';
+            });
+            btn.addEventListener('mouseout', () => {
+                btn.style.opacity = '1';
+            });
+        });
+
+        // Handle feedback form submission
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                console.log("Feedback form submitted");
+
+                const formData = new FormData(feedbackForm);
+
+                fetch('submit_feedback.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        feedbackForm.reset();
+                        updateContentVisibility('transcription'); // Switch back to transcription
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error submitting feedback:', error);
+                    alert('Error submitting feedback. Please try again.');
+                });
+            });
+        }
+
+        // Initialize with description visible
+        updateContentVisibility('description');
+    } else {
+        console.error("Toggle buttons not found in DOM");
     }
 
     // Update debug info function
@@ -96,8 +245,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Update description and transcription
             if (data.description) {
+                console.log('Setting description:', data.description);
                 descriptionText.innerHTML = data.description;
                 currentDescription = data.description;
+            } else {
+                console.log('No description available');
+                descriptionText.innerHTML = 'No description available for this video.';
             }
             
             if (languageSelect) {
@@ -338,3 +491,5 @@ function formatTime(seconds) {
     const secs = Math.floor(seconds % 60);
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 }
+
+
