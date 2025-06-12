@@ -178,3 +178,115 @@ GET params: Array
 )
 
 2025-06-09 09:17:54 - Query result: 
+2025-06-11 10:41:32 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-11 10:41:32 - Query result: 
+2025-06-11 10:42:18 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-11 10:42:18 - Query result: 
+2025-06-11 10:42:25 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => hi
+)
+
+2025-06-11 10:42:25 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/hi/sonam_mam_hindi_full_audio.mp3
+)
+
+2025-06-11 10:42:42 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => hi
+)
+
+2025-06-11 10:42:42 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/hi/sonam_mam_hindi_full_audio.mp3
+)
+
+2025-06-11 10:44:44 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => hi
+)
+
+2025-06-11 10:44:44 - Query result: 
+2025-06-11 10:44:47 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => hi
+)
+
+2025-06-11 10:44:47 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/hi/yt_video2_hindi_speech.mp3
+)
+
+2025-06-11 10:44:59 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => hi
+)
+
+2025-06-11 10:44:59 - Query result: 
+2025-06-11 10:45:03 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => hi
+)
+
+2025-06-11 10:45:03 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/hi/sonam_mam_hindi_full_audio.mp3
+)
+
+2025-06-12 07:32:50 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-12 07:32:50 - Query result: 
+2025-06-12 07:32:52 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-12 07:32:52 - Query result: 
+2025-06-12 07:33:12 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-12 07:33:12 - Query result: 
+2025-06-12 07:33:14 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-12 07:33:14 - Query result: 
