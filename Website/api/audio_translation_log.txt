@@ -686,3 +686,115 @@ GET params: Array
 )
 
 2025-06-09 19:19:00 - Query result: 
+2025-06-13 08:43:22 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 08:43:22 - Query result: 
+2025-06-13 08:43:26 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 08:43:26 - Query result: 
+2025-06-13 08:43:28 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 08:43:28 - Query result: 
+2025-06-13 08:43:47 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-13 08:43:47 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-13 08:43:49 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-13 08:43:49 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-13 09:23:27 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:23:27 - Query result: 
+2025-06-13 09:23:28 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:23:28 - Query result: 
+2025-06-13 09:34:59 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:34:59 - Query result: 
+2025-06-13 09:40:10 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:40:10 - Query result: 
+2025-06-13 09:43:54 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:43:54 - Query result: 
+2025-06-13 09:43:57 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:43:57 - Query result: 
+2025-06-13 09:44:23 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:44:23 - Query result: 
+2025-06-13 09:53:27 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 09:53:27 - Query result: 

@@ -1,3 +1,5 @@
+/* styling the webpage by css */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* styling the body */
 body {
     background: #f4f4f4;
     min-height: 100vh;
@@ -12,6 +15,8 @@ body {
     flex-direction: column;
 }
 
+/* main styling begins */
+/* first div real */
 .real {
     background-color: #fff;
     color: #b3abab;
@@ -20,6 +25,7 @@ body {
     height: 3rem;
 }
 
+/* subdiv container */
 .container {
     display: flex;
     background: #eee;
@@ -30,7 +36,7 @@ body {
     padding: 10px;
 }
 
-
+/* styling the header div container1 */
 .container1 {
     background-color: #fff;
     color: #2b4598;
@@ -42,6 +48,7 @@ body {
     align-items: center;
 }
 
+/* subdive row1 */
 .row1 {
     display: flex;
     align-items: center;
@@ -52,21 +59,26 @@ body {
     height: 100%;
 }
 
+/* styling the site header1 of the subdiv */
 .site_header_1 {
     height: 100px;
     width: 100px;
 }
 
+/* styling the site header2 of the subdiv */
 .site_header_2 {
     height: 100px;
     width: 100px;
 }
 
+/* styling the site header3 of the subdiv */
 .site_header_3 {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* lines of the site header3 */
+/* styling the h6 */
 h6 {
     font-size: 1rem;
     font-weight: 600;
@@ -74,6 +86,7 @@ h6 {
     margin-bottom: 8px;
 }
 
+/* styling the h2 */
 h2 {
     font-size: 1.875rem;
     font-weight: 700;
@@ -81,11 +94,20 @@ h2 {
     margin-bottom: 8px;
 }
 
+/* span of the site header3 */
+/* styling the span */
 span {
     font-size: 0.875rem;
     color: #545658;
 }
 
+/* styling the site header4 of the subdiv */
+.site_header_4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* styling  all the photos of the subdiv row1 */
 .photo {
     height: 100%;
     width: 100%;
@@ -93,7 +115,7 @@ span {
     margin-top: 2px;
 }
 
-/* Navbar */
+/* styling the navbar */
 .navbar {
     background-color: #2b4598;
     color: #fff;
@@ -108,6 +130,7 @@ span {
     box-shadow: 0 2px 6px rgba(43, 69, 152, 0.06);
 }
 
+/* styling the ul */
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -117,10 +140,12 @@ span {
     gap: 8px;
 }
 
+/* styling the li */
 .navbar li {
     display: inline-block;
 }
 
+/* styling the a */
 .navbar a {
     color: #fff;
     text-decoration: none;
@@ -130,7 +155,6 @@ span {
     font-weight: 500;
     transition: background 0.2s, color 0.2s;
 }
-
 
 /* Only the active page uses the yellow text and dark background */
 .navbar a.active {
@@ -144,22 +168,24 @@ span {
     color: #fff;
 }
 
-
+/* styling the language dropdown */
+/* styling div language-dropdown */
 .language-dropdown {
     display: flex;
     align-items: center;
     margin-right: 18px;
     font-size: 15px;
     font-weight: 500;
-
 }
 
+/* styling the  language label */
 .language-dropdown label {
     color: #fff;
     margin-right: 8px;
     font-weight: 600;
 }
 
+/* styling the language select */
 #languageSelect {
     padding: 5px 12px;
     border-radius: 4px;
@@ -171,11 +197,12 @@ span {
     transition: border 0.2s;
 }
 
+/* when the language select is focused */
 #languageSelect:focus {
     border-color: #2b4598;
 }
 
-/* Top Contact Bar */
+
 
 
 /* Main content layout */
@@ -185,9 +212,9 @@ span {
     min-height: 0;
     background: transparent;
     width: 100%;
-    max-width: 1280px;   /* slightly less for more left shift */
-    margin: 24px 0 0 20px;  /* move more to the left */
-    gap: 20px;
+    max-width: 1320px;      /* Larger for more content width */
+    margin: 24px 0 0 24px;  /* Slightly more right */
+    gap: 24px;              /* Slightly more gap */
     position: relative;
 }
 
@@ -241,13 +268,13 @@ span {
 
 .main-content {
     flex: 1;
-    padding: 0 0 0 4px;  /* smaller left padding */
+    padding: 0 0 0 18px;    /* More left padding for right shift */
     width: 100%;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin-left: 0px;   /* set to 0, since parent is moved */
+    gap: 32px;              /* Slightly more gap between children */
+    margin-left: 0;         /* Ensure left alignment */
 }
 
 /* Video player styles */
@@ -356,10 +383,10 @@ span {
 
 /* Transcription & Description Container */
 .transcription-container {
-    max-width: 830px;   /* slightly less for more shift */
-    margin: 0 0 0 2px;  /* a little more to the left */
+    max-width: 950px;       /* Larger for more content width */
+    margin: 0 0 0 24px;     /* Slightly more right */
     background: #fff;
-    padding: 22px 18px;
+    padding: 22px 24px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(31, 54, 80, 0.09);
     transition: box-shadow 0.2s;
@@ -390,8 +417,20 @@ span {
     color: #01fd33;
 }
 
+.toggle-btn.feedback-btn {
+    margin-left: auto;
+    background: #4CAF50;
+    color: white;
+}
 
+.toggle-btn.feedback-btn:hover {
+    background: #45a049;
+    opacity: 0.9;
+}
 
+.toggle-btn.feedback-btn:active {
+    background: #3d8b40;
+}
 
 #contentArea {
     width: 100%;
@@ -399,12 +438,158 @@ span {
 }
 
 .content-section {
-    display: none;
     width: 100%;
+    display: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
 }
 
 .content-section.active {
     display: block;
+}
+
+.feedback-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feedback-section .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feedback-section label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.feedback-section input[type="text"],
+.feedback-section input[type="email"],
+.feedback-section textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.feedback-section input[type="text"]:focus,
+.feedback-section input[type="email"]:focus,
+.feedback-section textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
+    background-color: #ffffff;
+}
+
+.feedback-section textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.feedback-section .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.feedback-section .submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-section .submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle animation when the form becomes active */
+.feedback-section.active {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feedback-section {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .feedback-section .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Add focus styles for accessibility */
+.feedback-section input:focus-visible,
+.feedback-section textarea:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Add placeholder styling */
+.feedback-section input::placeholder,
+.feedback-section textarea::placeholder {
+    color: #adb5bd;
+    opacity: 0.8;
+}
+
+/* Add validation styles */
+.feedback-section input:invalid,
+.feedback-section textarea:invalid {
+    border-color: #dc3545;
+}
+
+.feedback-section input:invalid:focus,
+.feedback-section textarea:invalid:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Add success state for valid inputs */
+.feedback-section input:valid,
+.feedback-section textarea:valid {
+    border-color: #28a745;
+}
+
+.feedback-section input:valid:focus,
+.feedback-section textarea:valid:focus {
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
 .transcription-text,
@@ -991,3 +1176,66 @@ footer h2 {
     letter-spacing: 0.1px;
   }
 }
+
+.show-feedback-section {
+    position: relative;
+    margin: 20px 0;
+    padding-right: 20px;
+    z-index: 100;
+    text-align: right;
+}
+
+.show-feedback-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #2b4598;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.show-feedback-btn:hover {
+    background-color: #1e3270;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.show-feedback-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle animation when the button appears */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.show-feedback-section {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .show-feedback-section {
+        padding-right: 10px;
+    }
+    
+    .show-feedback-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+

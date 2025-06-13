@@ -1,3 +1,4 @@
+<!-- php file for the webpage -->
 <?php
 require_once __DIR__ . '/includes/db.php';
 
@@ -9,6 +10,8 @@ if ($conn) {
     $videos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
+
+<!-- HTML file for the webpage -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +27,7 @@ if ($conn) {
 <body>
     <!-- Top Contact Bar -->
     <div class="real">
+        <!-- subdiv -->
         <div class="container">
             <i class="phone"></i>
             <b></b>
@@ -31,10 +35,12 @@ if ($conn) {
         </div>
     </div>
 
+
     <!-- Header Section -->
     <div class="container1">
+        <!-- subdiv -->
         <div class="row1">
-            <!-- Suresh Angadi Photo -->
+            <!-- founders Logo -->
             <div class="site_header_1">
                 <a class="back" href="https://aitmbgm.ac.in">
                     <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/Suresh-Angadi.jpg"
@@ -59,11 +65,15 @@ if ($conn) {
 
             <!-- AITM Logo -->
             <div class="site_header_4">
-                <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitm-logo.png"
-                    alt="AITM" title="AITM">
+                <a class="back" href="https://aitmbgm.ac.in">
+                    <img class="photo" src="https://aitmbgm.ac.in/wp-content/themes/aitmbgm-20/images/aitm-logo.png"
+                        alt="AITM" title="AITM">
+                </a>
             </div>
+
         </div>
     </div>
+
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -72,6 +82,7 @@ if ($conn) {
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
         <!-- Language Selector -->
         <div class="language-dropdown">
             <label for="languageSelect">Language:</label>
@@ -93,6 +104,7 @@ if ($conn) {
             </select>
         </div>
     </nav>
+
 
     <!-- Main Content Container -->
     <div class="container_page_layout">
@@ -140,10 +152,28 @@ if ($conn) {
                 <div class="content-toggle">
                     <button id="showTranscription" class="toggle-btn active">Transcription</button>
                     <button id="showDescription" class="toggle-btn">Description</button>
+                    <button id="showFeedback" class="toggle-btn feedback-btn">Provide Feedback</button>
                 </div>
                 <div id="contentArea">
                     <div id="transcriptionText" class="transcription-text content-section active"></div>
                     <div id="descriptionText" class="description-text content-section"></div>
+                    <div id="feedbackForm" class="feedback-section content-section">
+                        <form action="submit_feedback.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback">Feedback:</label>
+                                <textarea id="feedback" name="feedback" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Feedback</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,58 +201,146 @@ if ($conn) {
         <p>Last Updated: <span id="lastUpdatedDisplay"><?php echo date('Y-m-d H:i:s'); ?></span></p>
         <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
     </div>
-
+    <div class="show-feedback-section">
+        <a href="view_feedbacks.php" class="show-feedback-btn">
+            <i class="fas fa-comments"></i>
+            View All Feedbacks
+        </a>
+    </div>
     <!-- Footer -->
     <footer>
+        <!-- Show All Feedbacks Button -->
+
         <div class="footer-content">
             <h2>Angadi Institute Of Technology And Management</h2>
-            <!-- <p>Last Updated: </p>
-            <p>Developer: </p -->
+            <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
+            <p>Developer: vky6366</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="assets/js/player.js"></script>
     <script>
-        // Initialize debug display updates
-        function updateDebugTimestamp() {
-            document.getElementById('lastUpdatedDisplay').textContent = new Date().toISOString();
+    console.log("Test script loaded");
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Test DOMContentLoaded fired");
+        const testBtn = document.getElementById('showTranscription');
+        console.log("Test button found:", testBtn);
+        // Get modal elements
+        const modal = document.getElementById('feedbackModal');
+        const btn = document.getElementById('feedbackBtn');
+        const span = document.getElementsByClassName('close')[0];
+        const form = document.getElementById('feedbackForm');
+        const currentDateTimeElement = document.getElementById('currentDateTime');
+        const currentUserElement = document.getElementById('currentUser');
+
+        // Update date/time and user
+        function updateDateTime() {
+            const now = new Date();
+            const formatted = now.getUTCFullYear() + '-' +
+                String(now.getUTCMonth() + 1).padStart(2, '0') + '-' +
+                String(now.getUTCDate()).padStart(2, '0') + ' ' +
+                String(now.getUTCHours()).padStart(2, '0') + ':' +
+                String(now.getUTCMinutes()).padStart(2, '0') + ':' +
+                String(now.getUTCSeconds()).padStart(2, '0');
+            currentDateTimeElement.textContent = formatted;
         }
 
-        // Update debug timestamp every minute
-        setInterval(updateDebugTimestamp, 60000);
-
-        // Make debug panel draggable
-        const debugPanel = document.getElementById('debugInfo');
-        let isDragging = false;
-        let currentX;
-        let currentY;
-        let initialX;
-        let initialY;
-
-        debugPanel.addEventListener('mousedown', dragStart);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', dragEnd);
-
-        function dragStart(e) {
-            initialX = e.clientX - debugPanel.offsetLeft;
-            initialY = e.clientY - debugPanel.offsetTop;
-            isDragging = true;
+        // Open modal
+        btn.onclick = function() {
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
+            updateDateTime();
         }
 
-        function drag(e) {
-            if (isDragging) {
-                e.preventDefault();
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-                debugPanel.style.left = currentX + 'px';
-                debugPanel.style.top = currentY + 'px';
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        span.onclick = closeModal;
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
             }
         }
 
-        function dragEnd() {
-            isDragging = false;
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch('submit_feedback.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        form.reset();
+                        closeModal();
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('Error submitting feedback. Please try again.');
+                });
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    });
+    </script>
+    <script>
+    // Initialize debug display updates
+    function updateDebugTimestamp() {
+        document.getElementById('lastUpdatedDisplay').textContent = new Date().toISOString();
+    }
+
+    // Update debug timestamp every minute
+    setInterval(updateDebugTimestamp, 60000);
+
+    // Make debug panel draggable
+    const debugPanel = document.getElementById('debugInfo');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+
+    debugPanel.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+
+    function dragStart(e) {
+        initialX = e.clientX - debugPanel.offsetLeft;
+        initialY = e.clientY - debugPanel.offsetTop;
+        isDragging = true;
+    }
+
+    function drag(e) {
+        if (isDragging) {
+            e.preventDefault();
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+            debugPanel.style.left = currentX + 'px';
+            debugPanel.style.top = currentY + 'px';
         }
+    }
+
+    function dragEnd() {
+        isDragging = false;
+    }
     </script>
 </body>
 
