@@ -35,7 +35,6 @@ if ($conn) {
         </div>
     </div>
 
-
     <!-- Header Section -->
     <div class="container1">
         <!-- subdiv -->
@@ -74,7 +73,6 @@ if ($conn) {
         </div>
     </div>
 
-
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
@@ -105,7 +103,7 @@ if ($conn) {
         </div>
     </nav>
 
-
+    
     <!-- Main  Container -->
     <div class="container_page_layout">
 
@@ -125,87 +123,98 @@ if ($conn) {
         </div>
 
 
-
-
         <!-- Main Content Area -->
         <div class="main-content">
             <!-- Video Player -->
             <div class="video-container">
                 <!-- Videos -->
                 <div class="video-wrapper">
+
                     <!-- playing section -->
                     <video id="videoElement" controlsList="nodownload">
                         Your browser does not support the video element.
                     </video>
+
                     <!-- video controls -->
                     <div class="video-controls">
                         <!-- play/pause -->
                         <button id="playPauseBtn">Play</button>
-
                         <!-- progress bar-->
                         <div id="progressBar">
                             <div id="progress"></div>
                         </div>
-
                         <!-- playback speed -->
                         <div class="time-display">
                             <span id="currentTime">00:00</span> /
                             <span id="duration">00:00</span>
                         </div>
-
                         <!-- volume control -->
                         <div class="volume-control">
                             <label for="volumeControl">Volume:</label>
                             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
                         </div>
+
                     </div>
+
                 </div>
             </div>
 
-
-
-
-
             <!-- Transcription and Description Area -->
             <div class="transcription-container">
-            <!-- buttons section-->
+                <!-- buttons section-->
                 <div class="content-toggle">
                     <button id="showTranscription" class="toggle-btn active">Transcription</button>
                     <button id="showDescription" class="toggle-btn">Description</button>
                     <button id="showFeedback" class="toggle-btn feedback-btn">Provide Feedback</button>
                 </div>
 
-            <!-- text section -->
+                <!-- text section -->
                 <div id="contentArea">
                     <div id="transcriptionText" class="transcription-text content-section active"></div>
                     <div id="descriptionText" class="description-text content-section"></div>
 
                     <!-- Feedback Form -->
                     <div id="feedbackForm" class="feedback-section content-section">
+
                         <!-- submission form -->
                         <form action="submit_feedback.php" method="POST">
+                            <!-- name of the user -->
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
+                            <!-- email of the user -->
                             <div class="form-group">
                                 <label for="email">Email:</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
+                            <!-- feedback -->
                             <div class="form-group">
                                 <label for="feedback">Feedback:</label>
                                 <textarea id="feedback" name="feedback" required></textarea>
                             </div>
+                            <!-- submission button -->
                             <button type="submit" class="submit-btn">Submit Feedback</button>
                         </form>
+
                     </div>
 
-
                 </div>
+
             </div>
+
         </div>
+
+
     </div>
 
+    <!-- all feedbacks-->
+    <div class="show-feedback-section">
+        <a href="view_feedbacks.php" class="show-feedback-btn">
+            <i class="fas fa-comments"></i>
+            View All Feedbacks
+        </a>
+    </div>
 
 
     <!-- Debug Information Panel -->
@@ -220,8 +229,7 @@ if ($conn) {
         font-family: monospace;
         z-index: 9999;
         max-width: 300px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);"
-        >
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);">
 
         <h3 style="margin: 0 0 10px 0; color: #00ff00;">Debug Information</h3>
         <p>Current Video ID: <span id="currentVideoIdDisplay">none</span></p>
@@ -233,13 +241,6 @@ if ($conn) {
 
     </div>
 
-    <div class="show-feedback-section">
-        <a href="view_feedbacks.php" class="show-feedback-btn">
-            <i class="fas fa-comments"></i>
-            View All Feedbacks
-        </a>
-    </div>
-
     <!-- Footer  of thee webpage-->
     <footer>
         <div class="footer-content">
@@ -247,10 +248,13 @@ if ($conn) {
         </div>
     </footer>
 
+    <!-- end of the webpage -->
 
-    
+
+    <!-- script of the webpage -->
     <!-- Scripts -->
     <script src="assets/js/player.js"></script>
+
     <script>
     console.log("Test script loaded");
     document.addEventListener('DOMContentLoaded', function() {
@@ -332,6 +336,7 @@ if ($conn) {
         });
     });
     </script>
+
     <script>
     // Initialize debug display updates
     function updateDebugTimestamp() {
@@ -373,6 +378,7 @@ if ($conn) {
         isDragging = false;
     }
     </script>
+
 </body>
 
 </html>

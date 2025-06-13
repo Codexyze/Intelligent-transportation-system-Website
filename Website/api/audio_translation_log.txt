@@ -934,3 +934,91 @@ GET params: Array
 )
 
 2025-06-13 12:19:33 - Query result: 
+2025-06-13 12:27:40 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:27:40 - Query result: 
+2025-06-13 12:27:52 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:27:52 - Query result: 
+2025-06-13 12:30:24 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:30:24 - Query result: 
+2025-06-13 12:31:19 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:31:19 - Query result: 
+2025-06-13 12:31:43 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:31:43 - Query result: 
+2025-06-13 12:33:07 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:33:07 - Query result: 
+2025-06-13 12:33:56 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:33:56 - Query result: 
+2025-06-13 12:35:01 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:35:01 - Query result: 
+2025-06-13 12:36:30 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:36:30 - Query result: 
+2025-06-13 12:40:30 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:40:30 - Query result: 
+2025-06-13 12:40:40 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:40:40 - Query result: 

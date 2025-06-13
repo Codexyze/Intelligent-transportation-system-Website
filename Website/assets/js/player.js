@@ -1,3 +1,4 @@
+// Video Player Script
 // Global variables
 console.log("Script starting to load...");
 
