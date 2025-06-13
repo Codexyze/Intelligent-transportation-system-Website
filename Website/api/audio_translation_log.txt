@@ -798,3 +798,139 @@ GET params: Array
 )
 
 2025-06-13 09:53:27 - Query result: 
+2025-06-13 11:03:39 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:03:39 - Query result: 
+2025-06-13 11:09:17 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:09:17 - Query result: 
+2025-06-13 11:10:47 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:10:47 - Query result: 
+2025-06-13 11:11:05 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:11:05 - Query result: 
+2025-06-13 11:19:14 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:19:14 - Query result: 
+2025-06-13 11:21:10 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:21:10 - Query result: 
+2025-06-13 11:21:20 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:21:20 - Query result: 
+2025-06-13 11:24:40 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:24:40 - Query result: 
+2025-06-13 11:55:05 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 11:55:05 - Query result: 
+2025-06-13 12:00:25 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:00:25 - Query result: 
+2025-06-13 12:02:54 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:02:54 - Query result: 
+2025-06-13 12:02:55 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:02:55 - Query result: 
+2025-06-13 12:06:15 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:06:15 - Query result: 
+2025-06-13 12:08:16 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:08:16 - Query result: 
+2025-06-13 12:10:54 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:10:54 - Query result: 
+2025-06-13 12:13:59 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:13:59 - Query result: 
+2025-06-13 12:19:33 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-13 12:19:33 - Query result: 
