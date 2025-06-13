@@ -444,8 +444,8 @@ span {
 .toggle-btn {
     padding: 7px 20px;
     border: none;
-    background: #f4f4f4;
-    color: #2b4598;
+    background: #2b4598;
+    color: white;
     font-weight: 600;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
@@ -460,10 +460,14 @@ span {
     color: #01fd33;
 }
 
+.toggle-btn:hover {
+    background: #45a049;
+    opacity: 0.9;
+}
 /* styling the feedback button */
 .toggle-btn.feedback-btn {
     margin-left: auto;
-    background: #4CAF50;
+    background: #2b4598;
     color: white;
 }
 
@@ -472,9 +476,12 @@ span {
     opacity: 0.9;
 }
 
-.toggle-btn.feedback-btn:active {
-    background: #3d8b40;
+.toggle-btn.feedback-btn:active,
+.toggle-btn.feedback-btn:focus {
+     background: #2b4598;
+    color: #01fd33;
 }
+
 /* styling the transcription text */
 /* styling the description text */
 /* styling the content area */
@@ -625,6 +632,12 @@ span {
 .feedback-section input:valid:focus,
 .feedback-section textarea:valid:focus {
     box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* all feedbacks */
+.show-feedback-section{
+    margin-left: 10%;
+    
 }
 
 /*  styling the Footer  of the webpage */ 
@@ -895,3 +908,8 @@ footer h2 {
         border-radius: 7px 7px 0 0;
     }
 }
+
+/* styling of the webpage ends */
+/* responsive styling ends */
+
+/* if any changes are made to the webpage add below */
