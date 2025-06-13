@@ -106,11 +106,13 @@ if ($conn) {
     </nav>
 
 
-    <!-- Main Content Container -->
+    <!-- Main  Container -->
     <div class="container_page_layout">
+
         <!-- Video List Sidebar -->
         <div class="video-list">
             <h2>Available Videos</h2>
+            <!-- Videos List -->
             <ul id="videosList">
                 <?php foreach ($videos as $video): ?>
                 <li>
@@ -122,23 +124,36 @@ if ($conn) {
             </ul>
         </div>
 
+
+
+
         <!-- Main Content Area -->
         <div class="main-content">
             <!-- Video Player -->
             <div class="video-container">
+                <!-- Videos -->
                 <div class="video-wrapper">
+                    <!-- playing section -->
                     <video id="videoElement" controlsList="nodownload">
                         Your browser does not support the video element.
                     </video>
+                    <!-- video controls -->
                     <div class="video-controls">
+                        <!-- play/pause -->
                         <button id="playPauseBtn">Play</button>
+
+                        <!-- progress bar-->
                         <div id="progressBar">
                             <div id="progress"></div>
                         </div>
+
+                        <!-- playback speed -->
                         <div class="time-display">
                             <span id="currentTime">00:00</span> /
                             <span id="duration">00:00</span>
                         </div>
+
+                        <!-- volume control -->
                         <div class="volume-control">
                             <label for="volumeControl">Volume:</label>
                             <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
@@ -147,17 +162,27 @@ if ($conn) {
                 </div>
             </div>
 
+
+
+
+
             <!-- Transcription and Description Area -->
             <div class="transcription-container">
+            <!-- buttons section-->
                 <div class="content-toggle">
                     <button id="showTranscription" class="toggle-btn active">Transcription</button>
                     <button id="showDescription" class="toggle-btn">Description</button>
                     <button id="showFeedback" class="toggle-btn feedback-btn">Provide Feedback</button>
                 </div>
+
+            <!-- text section -->
                 <div id="contentArea">
                     <div id="transcriptionText" class="transcription-text content-section active"></div>
                     <div id="descriptionText" class="description-text content-section"></div>
+
+                    <!-- Feedback Form -->
                     <div id="feedbackForm" class="feedback-section content-section">
+                        <!-- submission form -->
                         <form action="submit_feedback.php" method="POST">
                             <div class="form-group">
                                 <label for="name">Name:</label>
@@ -174,10 +199,14 @@ if ($conn) {
                             <button type="submit" class="submit-btn">Submit Feedback</button>
                         </form>
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Debug Information Panel -->
     <div id="debugInfo" style="
@@ -191,8 +220,9 @@ if ($conn) {
         font-family: monospace;
         z-index: 9999;
         max-width: 300px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    ">
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);"
+        >
+
         <h3 style="margin: 0 0 10px 0; color: #00ff00;">Debug Information</h3>
         <p>Current Video ID: <span id="currentVideoIdDisplay">none</span></p>
         <p>Current Language: <span id="currentLanguageDisplay">none</span></p>
@@ -200,24 +230,25 @@ if ($conn) {
         <p>Last Event: <span id="lastEventDisplay">none</span></p>
         <p>Last Updated: <span id="lastUpdatedDisplay"><?php echo date('Y-m-d H:i:s'); ?></span></p>
         <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
+
     </div>
+
     <div class="show-feedback-section">
         <a href="view_feedbacks.php" class="show-feedback-btn">
             <i class="fas fa-comments"></i>
             View All Feedbacks
         </a>
     </div>
-    <!-- Footer -->
-    <footer>
-        <!-- Show All Feedbacks Button -->
 
+    <!-- Footer  of thee webpage-->
+    <footer>
         <div class="footer-content">
             <h2>Angadi Institute Of Technology And Management</h2>
-            <p>Last Updated: 2025-06-08 03:51:36 UTC</p>
-            <p>Developer: vky6366</p>
         </div>
     </footer>
 
+
+    
     <!-- Scripts -->
     <script src="assets/js/player.js"></script>
     <script>
