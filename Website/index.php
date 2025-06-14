@@ -103,7 +103,7 @@ if ($conn) {
         </div>
     </nav>
 
-    
+
     <!-- Main  Container -->
     <div class="container_page_layout">
 
@@ -208,11 +208,11 @@ if ($conn) {
 
     </div>
 
-    <!-- all feedbacks-->
-    <div class="show-feedback-section">
+
+    <!-- all feedback -->
+    <div class="button-wrapper">
         <a href="view_feedbacks.php" class="show-feedback-btn">
-            <i class="fas fa-comments"></i>
-            View All Feedbacks
+            <i class="fas fa-comments"></i> View All Feedbacks
         </a>
     </div>
 
