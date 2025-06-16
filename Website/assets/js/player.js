@@ -439,6 +439,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Add ended event listener to play next video
+    videoElement.addEventListener('ended', () => {
+        const currentVideoLink = document.querySelector(`#videosList a[onclick*="selectVideo(${currentVideoId})"]`);
+        if (currentVideoLink) {
+            const nextVideoLink = currentVideoLink.parentElement.nextElementSibling?.querySelector('a');
+            if (nextVideoLink) {
+                nextVideoLink.click();
+            }
+        }
+    });
+
     currentAudioElement.addEventListener('error', (e) => {
         console.error('Audio error:', {
             error: currentAudioElement.error,
