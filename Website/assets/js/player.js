@@ -232,7 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Video data:', data);
             
             // Set video source
-            videoElement.src = data.original_path.replace(/ /g, "%20");
+            videoElement.src = data.original_path;
+            videoElement.load(); // Force reload of video element
             
             // Load audio for current language
             if (languageSelect) {
@@ -299,6 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const wasPlaying = !videoElement.paused;
                 const currentTime = videoElement.currentTime;
                 
+                // Handle relative paths
                 currentAudioElement.src = data.audio_path;
                 isAudioLoaded = true;
                 
@@ -382,6 +384,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Speed control
+    const speedControl = document.getElementById('speedControl');
+    if (speedControl) {
+        speedControl.addEventListener('change', (e) => {
+            const speed = parseFloat(e.target.value);
+            videoElement.playbackRate = speed;
+            if (currentAudioElement) {
+                currentAudioElement.playbackRate = speed;
+            }
+        });
+    }
+
     // Progress bar control
     progressBar.addEventListener('click', (e) => {
         const rect = progressBar.getBoundingClientRect();
@@ -423,6 +437,17 @@ document.addEventListener('DOMContentLoaded', function() {
             networkState: videoElement.networkState,
             readyState: videoElement.readyState
         });
+    });
+
+    // Add ended event listener to play next video
+    videoElement.addEventListener('ended', () => {
+        const currentVideoLink = document.querySelector(`#videosList a[onclick*="selectVideo(${currentVideoId})"]`);
+        if (currentVideoLink) {
+            const nextVideoLink = currentVideoLink.parentElement.nextElementSibling?.querySelector('a');
+            if (nextVideoLink) {
+                nextVideoLink.click();
+            }
+        }
     });
 
     currentAudioElement.addEventListener('error', (e) => {

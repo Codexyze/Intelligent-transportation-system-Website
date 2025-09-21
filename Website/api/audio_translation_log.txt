@@ -1022,3 +1022,859 @@ GET params: Array
 )
 
 2025-06-13 12:40:40 - Query result: 
+2025-06-14 09:16:35 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:16:35 - Query result: 
+2025-06-14 09:16:46 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:16:46 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 09:23:38 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:23:38 - Query result: 
+2025-06-14 09:23:41 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:23:41 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 09:31:02 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:31:02 - Query result: 
+2025-06-14 09:31:06 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:31:06 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 09:31:29 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:31:29 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 09:38:02 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:38:02 - Query result: 
+2025-06-14 09:38:07 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:38:07 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 09:40:14 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:40:14 - Query result: 
+2025-06-14 09:40:19 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:40:19 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 09:44:32 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:44:32 - Query result: 
+2025-06-14 09:44:36 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:44:36 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 09:45:27 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:45:27 - Query result: 
+2025-06-14 09:45:30 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:45:30 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 09:45:46 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => en
+)
+
+2025-06-14 09:45:46 - Query result: 
+2025-06-14 09:45:50 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => en
+)
+
+2025-06-14 09:45:50 - Query result: 
+2025-06-14 09:45:51 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:45:51 - Query result: 
+2025-06-14 09:45:54 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => en
+)
+
+2025-06-14 09:45:54 - Query result: 
+2025-06-14 09:47:35 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:47:35 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 09:47:44 - Received request
+GET params: Array
+(
+    [video_id] => 9
+    [lang_code] => en
+)
+
+2025-06-14 09:47:44 - Query result: 
+2025-06-14 09:47:46 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 09:47:46 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 09:48:01 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => fr
+)
+
+2025-06-14 09:48:01 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_french_full.mp3?alt=media&token=9f898839-f335-4de6-8a17-afe5431021ed
+)
+
+2025-06-14 09:51:30 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:51:30 - Query result: 
+2025-06-14 09:53:51 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:53:51 - Query result: 
+2025-06-14 09:53:53 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:53:53 - Query result: 
+2025-06-14 09:55:07 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:55:07 - Query result: 
+2025-06-14 09:55:18 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:55:18 - Query result: 
+2025-06-14 09:55:20 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:55:20 - Query result: 
+2025-06-14 09:55:47 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:55:47 - Query result: 
+2025-06-14 09:55:50 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:55:50 - Query result: 
+2025-06-14 09:56:28 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:56:28 - Query result: 
+2025-06-14 09:56:30 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:56:30 - Query result: 
+2025-06-14 09:57:59 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:57:59 - Query result: 
+2025-06-14 09:58:01 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:58:01 - Query result: 
+2025-06-14 09:59:55 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 09:59:55 - Query result: 
+2025-06-14 10:01:15 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:01:15 - Query result: 
+2025-06-14 10:02:33 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:02:33 - Query result: 
+2025-06-14 10:03:11 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:03:11 - Query result: 
+2025-06-14 10:03:18 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 10:03:18 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 10:03:42 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:03:42 - Query result: 
+2025-06-14 10:03:46 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 10:03:46 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 10:05:01 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:05:01 - Query result: 
+2025-06-14 10:05:07 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:05:07 - Query result: 
+2025-06-14 10:07:34 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:07:34 - Query result: 
+2025-06-14 10:07:35 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 10:07:35 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 10:09:46 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 10:09:46 - Query result: 
+2025-06-14 10:09:47 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 10:09:47 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-14 14:09:52 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 14:09:52 - Query result: 
+2025-06-14 14:34:47 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:34:47 - Query result: 
+2025-06-14 14:39:04 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:39:04 - Query result: 
+2025-06-14 14:39:33 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:39:33 - Query result: 
+2025-06-14 14:39:48 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:39:48 - Query result: 
+2025-06-14 14:40:07 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:40:07 - Query result: 
+2025-06-14 14:41:09 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:41:09 - Query result: 
+2025-06-14 14:41:28 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:41:28 - Query result: 
+2025-06-14 14:41:43 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:41:43 - Query result: 
+2025-06-14 14:41:59 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:41:59 - Query result: 
+2025-06-14 14:42:13 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:42:13 - Query result: 
+2025-06-14 14:42:14 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-14 14:42:14 - Query result: Array
+(
+    [audio_path] => /Intelligent-transportation-system-Website/Website/assets/audio/translations/en/Intelligent_Transportation_System.mp3
+)
+
+2025-06-14 14:44:19 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:44:19 - Query result: 
+2025-06-14 14:45:41 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:45:41 - Query result: 
+2025-06-14 14:48:52 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:48:52 - Query result: 
+2025-06-14 14:49:31 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-14 14:49:31 - Query result: 
+2025-06-14 16:29:29 - Received request
+GET params: Array
+(
+    [video_id] => 7
+    [lang_code] => en
+)
+
+2025-06-14 16:29:29 - Query result: 
+2025-06-14 16:29:38 - Received request
+GET params: Array
+(
+    [video_id] => 7
+    [lang_code] => en
+)
+
+2025-06-14 16:29:38 - Query result: 
+2025-06-14 16:30:23 - Received request
+GET params: Array
+(
+    [video_id] => 7
+    [lang_code] => en
+)
+
+2025-06-14 16:30:23 - Query result: 
+2025-06-15 04:19:27 - Received request
+GET params: Array
+(
+    [video_id] => 7
+    [lang_code] => en
+)
+
+2025-06-15 04:19:27 - Query result: 
+2025-06-15 04:19:30 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-15 04:19:30 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-15 04:26:58 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:26:58 - Query result: 
+2025-06-15 04:27:01 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:27:01 - Query result: 
+2025-06-15 04:27:40 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:27:40 - Query result: 
+2025-06-15 04:27:42 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:27:42 - Query result: 
+2025-06-15 04:37:40 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:37:40 - Query result: 
+2025-06-15 04:40:19 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:40:19 - Query result: 
+2025-06-15 04:40:21 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:40:21 - Query result: 
+2025-06-15 04:42:24 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:42:24 - Query result: 
+2025-06-15 04:42:27 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:42:27 - Query result: 
+2025-06-15 04:42:30 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 04:42:30 - Query result: 
+2025-06-15 07:49:26 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 07:49:26 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2FDhanashree_maam_retake_English.wav?alt=media&token=13bd6332-eea7-4dc0-978f-ae95b159fac6
+)
+
+2025-06-15 07:49:48 - Received request
+GET params: Array
+(
+    [video_id] => 2
+    [lang_code] => en
+)
+
+2025-06-15 07:49:48 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FAmit_pathak_sir%2Famit_pathak_sir_English.wav?alt=media&token=e2c95c85-0f0e-4bdf-96cf-ccb0631648ed
+)
+
+2025-06-15 07:50:03 - Received request
+GET params: Array
+(
+    [video_id] => 3
+    [lang_code] => en
+)
+
+2025-06-15 07:50:03 - Query result: 
+2025-06-15 07:50:23 - Received request
+GET params: Array
+(
+    [video_id] => 4
+    [lang_code] => en
+)
+
+2025-06-15 07:50:23 - Query result: 
+2025-06-15 08:43:11 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 08:43:11 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2FDhanashree_maam_retake_English.wav?alt=media&token=13bd6332-eea7-4dc0-978f-ae95b159fac6
+)
+
+2025-06-15 11:47:59 - Received request
+GET params: Array
+(
+    [video_id] => 5
+    [lang_code] => en
+)
+
+2025-06-15 11:47:59 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FGajendra%2FGajendra_Deshpande_sir_English.wav?alt=media&token=69cfac05-753e-47f2-9c5b-a1c4758936ae
+)
+
+2025-06-15 12:25:52 - Received request
+GET params: Array
+(
+    [video_id] => 5
+    [lang_code] => hi
+)
+
+2025-06-15 12:25:52 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FGajendra%2Fhindi_full.mp3?alt=media&token=b6c1edd8-12ff-4437-a7cb-fbc07ac8c80b
+)
+
+2025-06-15 12:26:55 - Received request
+GET params: Array
+(
+    [video_id] => 5
+    [lang_code] => en
+)
+
+2025-06-15 12:26:55 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FGajendra%2FGajendra_Deshpande_sir_English.wav?alt=media&token=69cfac05-753e-47f2-9c5b-a1c4758936ae
+)
+
+2025-06-15 12:27:38 - Received request
+GET params: Array
+(
+    [video_id] => 5
+    [lang_code] => kn
+)
+
+2025-06-15 12:27:38 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2FGajendra%2Fkannada_full.mp3?alt=media&token=6a51ed6c-6e92-4e47-a86b-9e9a0978f361
+)
+
+2025-06-15 13:04:25 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 13:04:25 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2FDhanashree_maam_retake_English.wav?alt=media&token=13bd6332-eea7-4dc0-978f-ae95b159fac6
+)
+
+2025-06-15 13:04:27 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 13:04:27 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2FDhanashree_maam_retake_English.wav?alt=media&token=13bd6332-eea7-4dc0-978f-ae95b159fac6
+)
+
+2025-06-15 13:04:37 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => bn
+)
+
+2025-06-15 13:04:37 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2Fbengali_full.mp3?alt=media&token=45594a3d-c6ea-4ba8-87c5-068af9f4b901
+)
+
+2025-06-15 15:08:37 - Received request
+GET params: Array
+(
+    [video_id] => 1
+    [lang_code] => en
+)
+
+2025-06-15 15:08:37 - Query result: Array
+(
+    [audio_path] => https://firebasestorage.googleapis.com/v0/b/transport-system-630dc.firebasestorage.app/o/Translations%2Fdhanashree_maam%2FDhanashree_maam_retake_English.wav?alt=media&token=13bd6332-eea7-4dc0-978f-ae95b159fac6
+)
+
+2025-06-15 15:08:50 - Received request
+GET params: Array
+(
+    [video_id] => 13
+    [lang_code] => en
+)
+
+2025-06-15 15:08:50 - Query result: 

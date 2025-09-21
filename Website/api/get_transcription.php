@@ -33,40 +33,37 @@ try {
         exit;
     }
     
-    $transcript_path = $_SERVER['DOCUMENT_ROOT'] . $result['transcript_path'];
+    $transcript_path = $result['transcript_path'];
     error_log("Looking for transcript at: " . $transcript_path);
     
-    if (!file_exists($transcript_path)) {
-        error_log("Transcript file not found at: " . $transcript_path);
-        echo json_encode(['error' => 'Transcription file not found at: ' . $transcript_path]);
-        exit;
+    // Check if the path is a Firebase URL
+    if (strpos($transcript_path, 'http') === 0) {
+        // It's a URL, fetch the content directly
+        $transcript = file_get_contents($transcript_path);
+        if ($transcript === false) {
+            error_log("Failed to fetch transcript from URL: " . $transcript_path);
+            echo json_encode(['error' => 'Failed to fetch transcript from URL']);
+            exit;
+        }
+    } else {
+        // It's a local file path
+        $full_path = $_SERVER['DOCUMENT_ROOT'] . $transcript_path;
+        if (!file_exists($full_path)) {
+            error_log("Transcript file not found at: " . $full_path);
+            echo json_encode(['error' => 'Transcription file not found']);
+            exit;
+        }
+        $transcript = file_get_contents($full_path);
+        if ($transcript === false) {
+            error_log("Failed to read transcript file: " . $full_path);
+            echo json_encode(['error' => 'Failed to read transcript file']);
+            exit;
+        }
     }
     
-    $transcript = file_get_contents($transcript_path);
-    if ($transcript === false) {
-        error_log("Failed to read transcript file: " . $transcript_path);
-        echo json_encode(['error' => 'Failed to read transcript file']);
-        exit;
-    }
-    
-    echo json_encode([
-        'success' => true,
-        'transcript' => $transcript,
-        'debug' => [
-            'video_id' => $video_id,
-            'lang_code' => $lang_code,
-            'path' => $transcript_path
-        ]
-    ]);
+    echo json_encode(['transcript' => $transcript]);
     
 } catch (Exception $e) {
-    error_log('Transcription error: ' . $e->getMessage());
-    echo json_encode([
-        'error' => 'Error loading transcription',
-        'debug' => [
-            'message' => $e->getMessage(),
-            'video_id' => $video_id,
-            'lang_code' => $lang_code
-        ]
-    ]);
+    error_log("Error in get_transcription.php: " . $e->getMessage());
+    echo json_encode(['error' => 'Server error: ' . $e->getMessage()]);
 }

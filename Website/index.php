@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/db.php';
 $conn = getDBConnection();
 $videos = [];
 if ($conn) {
-    $stmt = $conn->query("SELECT video_id, title FROM videos ORDER BY created_at DESC");
+    $stmt = $conn->query("SELECT video_id, title FROM videos ORDER BY created_at ASC");
     $videos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
@@ -103,7 +103,7 @@ if ($conn) {
         </div>
     </nav>
 
-    
+
     <!-- Main  Container -->
     <div class="container_page_layout">
 
@@ -208,37 +208,12 @@ if ($conn) {
 
     </div>
 
-    <!-- all feedbacks-->
-    <div class="show-feedback-section">
+
+    <!-- all feedback -->
+    <div class="button-wrapper">
         <a href="view_feedbacks.php" class="show-feedback-btn">
-            <i class="fas fa-comments"></i>
-            View All Feedbacks
+            <i class="fas fa-comments"></i> View All Feedbacks
         </a>
-    </div>
-
-
-    <!-- Debug Information Panel -->
-    <div id="debugInfo" style="
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: monospace;
-        z-index: 9999;
-        max-width: 300px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-
-        <h3 style="margin: 0 0 10px 0; color: #00ff00;">Debug Information</h3>
-        <p>Current Video ID: <span id="currentVideoIdDisplay">none</span></p>
-        <p>Current Language: <span id="currentLanguageDisplay">none</span></p>
-        <p>Audio Loaded: <span id="audioLoadedDisplay">false</span></p>
-        <p>Last Event: <span id="lastEventDisplay">none</span></p>
-        <p>Last Updated: <span id="lastUpdatedDisplay"><?php echo date('Y-m-d H:i:s'); ?></span></p>
-        <p>Current User: <span id="currentUserDisplay">vky6366</span></p>
-
     </div>
 
     <!-- Footer  of thee webpage-->

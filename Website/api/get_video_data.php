@@ -36,10 +36,10 @@ try {
     }
 
     // Construct the full server path
-    $server_path = $_SERVER['DOCUMENT_ROOT'] . $video['original_path'];
+    $server_path = $video['original_path'];
     
-    // Check if the video file exists
-    $file_exists = file_exists($server_path);
+    // Check if the video file exists - only for local files
+    $file_exists = strpos($server_path, 'http') === 0 ? true : file_exists($server_path);
 
     // If there's a description, process it
     $description = !empty($video['description']) ? $video['description'] : 'No description available for this video.';

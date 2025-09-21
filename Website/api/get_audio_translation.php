@@ -33,12 +33,8 @@ try {
     
     if ($result) {
         echo json_encode([
-            'audio_path' => $result['audio_path'],
+            'audio_path' => $result['audio_path'],  // full Firebase URL with token
             'lang_code' => $lang_code
-        ]);
-    } else {
-        echo json_encode([
-            'error' => 'No audio translation found for this language'
         ]);
     }
     

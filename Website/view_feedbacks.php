@@ -73,7 +73,6 @@ if ($conn) {
                             <span class="feedback-email"><?php echo htmlspecialchars($feedback['email']); ?></span>
                         </div>
                     </div>
-                    <br>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
